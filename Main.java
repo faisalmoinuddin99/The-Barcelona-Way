@@ -1,14 +1,16 @@
 public class Main {
     public static void main(String[] args) {
-        int i,j,k=5, p= 0 ;
-
-        for(i = 1; i <= 5; i++){
-            for(j = 1; j < k; j++){
+        int k = 5, p = 0;
+        int i ;
+        for (i = 1; i <= 5; i++){
+            // this will detect the spaces
+            for(int j = 1; j < k; j++){
                 System.out.print(" ");
             }
             k-- ;
-            for (int s = 0 ; s < i+p ;s++){
-                System.out.print(2 * s + 1);
+            // logic to print odd number
+            for(int s = 0 ; s < i + p; s++){
+                System.out.print("*");
             }
             System.out.println();
             p++ ;
@@ -19,10 +21,10 @@ public class Main {
 /*
 OUTPUT:
 
-    1
-   135
-  13579
- 135791113
-1357911131517
+    *
+   ***
+  *****
+ *******
+*********
 
  */
