@@ -3,18 +3,16 @@ import java.util.Scanner;
 public class B1Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        // taking integer as an input
+        System.out.println("Enter two numbers: ");
         int a = sc.nextInt();
-        System.out.println(a);
-
-        // taking float as an input
-        float b = sc.nextFloat() ;
-        System.out.println(b);
-
-        // taking string as an input
-        String name = sc.next() ;
-        System.out.println(name);
-
+        int b = sc.nextInt();
+        String operator = sc.next();
+        switch (operator) {
+            case "+" -> System.out.println(a + b);
+            case "-" -> System.out.println(a - b);
+            case "*" -> System.out.println(a * b);
+            case "/" -> System.out.println(a / b);
+            default -> System.out.println("Operator not available");
+        }
     }
 }
