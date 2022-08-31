@@ -1,30 +1,27 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        int k = 5, p = 0;
-        int i ;
-        for (i = 1; i <= 5; i++){
-            // this will detect the spaces
-            for(int j = 1; j < k; j++){
-                System.out.print(" ");
-            }
-            k-- ;
-            // logic to print odd number
-            for(int s = 0 ; s < i + p; s++){
-                System.out.print("*");
-            }
-            System.out.println();
-            p++ ;
-        }
+        int N = 1234575565 ;
 
+        int count = 0 ;
+
+        // APPROACH 1 - Tn: O(n)
+        while(N != 0){
+            N = N / 10 ;
+            count++ ;
+        }
+        System.out.println(count);
+
+
+        // APPROACH 2 - Tn: O(1)
+        int newN = 1234575565 ;
+        String convertedN = String.valueOf(newN) ;
+        System.out.println(convertedN.length());
+
+        // APPROACH 3 - Tn: O(1)
+        int approachThirdNumber = 123456 ;
+        int digit = (int) Math.floor(Math.log10(approachThirdNumber) + 1);
+        System.out.println(digit);
     }
 }
-/*
-OUTPUT:
-
-    *
-   ***
-  *****
- *******
-*********
-
- */
