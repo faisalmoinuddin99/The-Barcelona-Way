@@ -2,25 +2,31 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-      int N = 153 ;
-      String armstrongNumberOrNot = armstrongNumber(N) ;
-        System.out.println(armstrongNumberOrNot);
-      }
+        int N1 = 3;
+        int N2 = 6;
+        int approach1 = findGCDApproach1(N1, N2);
+        int approach2 = gcd(N1, N2) ;
+        System.out.println(approach1);
+        System.out.println(approach2);
+    }
 
-    public static String armstrongNumber(int N) {
-        int cloneOfN = N ;
-        int sum = 0 ;
-        while (N != 0){
-            int digit = N % 10 ;
-            sum = (int) (sum + Math.pow(digit,3));
-            N = N / 10;
+    // Tn: O(n)
+    public static int findGCDApproach1(int num1, int num2) {
+        int min = Math.min(num1, num2);
+        int ans = 0;
+        for (int i = 1; i <= min; i++) {
+            if (num1 % i == 0 && num2 % i == 0) {
+                ans = i;
+            }
         }
-
-        if (sum == cloneOfN){
-            return "Yes" ;
-        }else {
-            return "No" ;
+        return ans;
+    }
+    // Tn: O(log_phi min(a,b)) where phi = 1.61
+    public static int gcd(int num1, int num2) {
+        if (num2 == 0){
+            return num1 ;
         }
+        return gcd(num2,num1 % num2) ;
     }
 }
 
