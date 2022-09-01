@@ -2,12 +2,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int N1 = 3;
-        int N2 = 6;
+        int N1 = 14;
+        int N2 = 8;
         int approach1 = findGCDApproach1(N1, N2);
         int approach2 = gcd(N1, N2) ;
-        System.out.println(approach1);
-        System.out.println(approach2);
+//        System.out.println(approach1);
+        System.out.println("GCD: "+approach2);
+
+        int lcm = findLCM(N1, N2) ;
+        System.out.println("LCM: "+ lcm);
     }
 
     // Tn: O(n)
@@ -20,6 +23,10 @@ public class Main {
             }
         }
         return ans;
+    }
+    public static int findLCM(int num1, int num2){
+        int gcd = findGCDApproach1(num1,num2) ;
+        return (num1 * num2) / gcd;
     }
     // Tn: O(log_phi min(a,b)) where phi = 1.61
     public static int gcd(int num1, int num2) {
