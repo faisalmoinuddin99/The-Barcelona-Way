@@ -1,27 +1,22 @@
 import java.util.Scanner;
 
 public class Main {
+
+    static int counter = 0 ;
     public static void main(String[] args) {
-        int N = 6;
-        boolean ans = isPrime(N);
-//        System.out.println(ans );
-
-        if (ans) {
-            System.out.println("yes");
-        } else {
-            System.out.println("No");
-        }
+        f() ; // function call
     }
+    static void f(){
 
-    static boolean isPrime(int N) {
-        for (int i = 2; i < N; i++) {
-            if (N % i == 0) {
-                return false;
-            }
+        // Base condition
+        if(counter == 3){
+            return ; // backtrack
         }
-        return true;
+        System.out.print(counter + " ");
+        counter++ ;
+        f() ; // recursive call
     }
 
 }
-
+// OUTPUT: 0 1 2
 
